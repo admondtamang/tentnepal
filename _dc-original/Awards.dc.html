@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { margin: 0; }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; }
+  ::selection { background: #16181a; color: #fff; }
+</style>
+</helmet>
+
+<div style="--bg:#fff; --bg2:#f4f3ef; --ink:#16181a; --muted:#8a8a84; --line:rgba(22,24,26,.12); --accent:#3a5a40; font-family:'Hanken Grotesk',-apple-system,sans-serif; color:#16181a; background:#fff; min-height:100vh; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <div style="background:#16181a; color:#fff; text-align:center; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; padding:9px 20px; font-weight:500;">
+    UN-enlisted &nbsp;&middot;&nbsp; ISO 9001:2015 certified &nbsp;&middot;&nbsp; Manufacturing since 1980
+  </div>
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Home.dc.html"><img src="https://nepaltent.com.np/wp-content/uploads/2021/05/logo_ntt.png" alt="Nepal Tent &amp; Tarpaulin" style="height:40px; width:auto;"></a>
+      <nav style="display:flex; align-items:center; gap:30px; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:500;">
+        <a href="Home.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Home</a>
+        <a href="Company.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Company</a>
+        <a href="Awards.dc.html" style="color:var(--ink); padding-bottom:2px; border-bottom:1px solid var(--ink);">Awards</a>
+        <a href="Clients.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Clients</a>
+        <a href="Press-Release.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Press</a>
+        <a href="Products.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Products</a>
+        <a href="Contact.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- page header -->
+  <section style="max-width:1280px; margin:0 auto; padding:96px 32px 64px; border-bottom:1px solid var(--line);">
+    <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:18px;">Recognition</div>
+    <h1 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(40px,6vw,80px); letter-spacing:-.02em; line-height:1; margin-bottom:24px;">Awards</h1>
+    <p style="font-size:17px; line-height:1.65; color:var(--muted); max-width:60ch;">Four decades of quality and service, recognised by the United Nations, the World Bank and national institutions.</p>
+  </section>
+
+  <!-- featured ISO -->
+  <section style="background:var(--bg2);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:stretch;">
+      <div style="padding:96px 56px 96px 0; display:flex; flex-direction:column; justify-content:center;">
+        <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:18px;">Certification</div>
+        <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(28px,3.2vw,42px); letter-spacing:-.015em; line-height:1.06; margin-bottom:20px;">ISO 9001:2015 Certified</h2>
+        <p style="font-size:16px; line-height:1.7; color:#3c3e3c; max-width:46ch; margin-bottom:28px;">Our quality management system is independently certified to the ISO 9001:2015 international standard &mdash; assuring consistent quality, reliable delivery and continual improvement across every product line.</p>
+        <a href="https://nepaltent.com.np/wp-content/uploads/2021/09/ISO_Certificate_awarded_to_Nepal_Tent_and_Tarpaulin.png" target="_blank" style="font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; border-bottom:1px solid var(--ink); padding-bottom:3px; align-self:flex-start;" style-hover="color:var(--accent); border-color:var(--accent)">View certificate &rarr;</a>
+      </div>
+      <div style="padding:48px 0 48px 56px; display:flex; align-items:center; justify-content:center;">
+        <a href="https://nepaltent.com.np/wp-content/uploads/2021/09/ISO_Certificate_awarded_to_Nepal_Tent_and_Tarpaulin.png" target="_blank" style="display:block; background:#fff; border:1px solid var(--line); padding:18px; max-width:420px; width:100%;">
+          <img src="https://nepaltent.com.np/wp-content/uploads/2021/09/ISO_Certificate_awarded_to_Nepal_Tent_and_Tarpaulin.png" alt="ISO 9001:2015 Certificate" style="width:100%; height:auto;">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- awards grid -->
+  <section style="max-width:1280px; margin:0 auto; padding:96px 32px 110px;">
+    <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:14px;">Honours &amp; appreciation</div>
+    <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(26px,3vw,40px); letter-spacing:-.015em; margin-bottom:48px;">Certificates &amp; medals</h2>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:48px;">
+      <sc-for list="{{ awards }}" as="a" hint-placeholder-count="0">
+        <article>
+          <a href="{{ a.img }}" target="_blank" style="display:block; background:var(--bg2); border:1px solid var(--line); aspect-ratio:4/3; overflow:hidden; margin-bottom:22px;" style-hover="border-color:var(--accent)">
+            <img src="{{ a.img }}" alt="{{ a.title }}" style="width:100%; height:100%; object-fit:contain; padding:28px;">
+          </a>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:10px;">{{ a.by }}</div>
+          <h3 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:21px; letter-spacing:-.01em; line-height:1.2; margin-bottom:10px;">{{ a.title }}</h3>
+          <p style="font-size:15px; line-height:1.65; color:var(--muted); max-width:48ch;">{{ a.desc }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="border-top:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:84px 32px; text-align:center;">
+      <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(26px,3.4vw,44px); letter-spacing:-.015em; margin-bottom:28px;">Work with a partner you can trust.</h2>
+      <a href="Contact.dc.html" style="display:inline-block; padding:16px 38px; background:#16181a; color:#fff; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;" style-hover="background:#3a5a40">Contact us</a>
+    </div>
+  </section>
+
+  <footer style="background:#16181a; color:rgba(255,255,255,.72);">
+    <div style="max-width:1280px; margin:0 auto; padding:72px 32px 36px; display:grid; grid-template-columns:1.6fr 1fr 1fr 1.2fr; gap:40px;">
+      <div>
+        <img src="https://nepaltent.com.np/wp-content/uploads/2021/05/logo_ntt.png" alt="NTT" style="height:46px; filter:brightness(0) invert(1); opacity:.95; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.7; max-width:32ch;">Manufacturer &amp; exporter of premium camping, shelter and relief products from the Himalayas since 1980.</p>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Explore</div>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
+          <a href="Products.dc.html" style-hover="color:#fff">Products</a>
+          <a href="Awards.dc.html" style-hover="color:#fff">Awards</a>
+          <a href="Clients.dc.html" style-hover="color:#fff">Clients</a>
+          <a href="Press-Release.dc.html" style-hover="color:#fff">Press Release</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Company</div>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
+          <a href="Company.dc.html" style-hover="color:#fff">About</a>
+          <a href="Contact.dc.html" style-hover="color:#fff">Contact</a>
+          <a href="https://wa.me/+9779815398113" target="_blank" style-hover="color:#fff">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Contact</div>
+        <div style="font-size:14px; line-height:1.8;">
+          <div>Balaju Ring Rd, Kathmandu</div>
+          <div style="margin-top:8px;">Office: 4950831, 4956533</div>
+          <div>Mobile: 9851335109</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.14);">
+      <div style="max-width:1280px; margin:0 auto; padding:20px 32px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12.5px; color:rgba(255,255,255,.5);">
+        <span>&copy; 1980&ndash;2026 Nepal Tent &amp; Tarpaulin</span>
+        <span>UN-enlisted &middot; ISO 9001:2015</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/+9779815398113" target="_blank" aria-label="WhatsApp" style="position:fixed; bottom:24px; right:24px; z-index:60; width:52px; height:52px; border-radius:50%; background:#16181a; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px -8px rgba(0,0,0,.4);" style-hover="background:#3a5a40">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"></path></svg>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const E = "https://nepaltent.com.np/wp-content/uploads/elementor/thumbs/";
+    return {
+      awards: [
+        { by: "United Nations Mission in Nepal", title: "Certificate of Appreciation", desc: "Awarded by UNMIN for our contribution to the peace process in Nepal.", img: E + "award-1_unmin_letter-of-appreciation-p7hkx2xoskw892t3ic18aox6xihaxuie2pnlmsnhwk.jpg" },
+        { by: "United Nations Mission in Nepal", title: "Appreciation & UNMIN Service Medal", desc: "Awarded by UNMIN to Mr. Ratan Khetan for his outstanding contribution to the peace process in Nepal.", img: E + "award-2_unmin_service-medal-p7hkx4td68yswaqd7cuhfog44a81d8puqyyklckpk4.jpg" },
+        { by: "National Industrial Exhibition", title: "Certificate of Appreciation", desc: "Awarded by the National Industrial Exhibition & Tourism Festival for being chosen second amongst 400 participants.", img: "https://nepaltent.com.np/wp-content/uploads/2021/05/award-3_national-industrial-exhibition_letter-of-appreciation.jpg" },
+        { by: "The World Bank", title: "Certificate of Appreciation", desc: "Awarded by The World Bank for participating in the Nepal Enterprise Survey 2013.", img: E + "award-4_the-world-bank_certificate-of-appreciation-scaled-p7hkxg3fg9e8rm9zdhq09lln8wofxlymsiseco3zhg.jpg" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

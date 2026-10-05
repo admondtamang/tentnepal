@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { margin: 0; }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; }
+  input, textarea { font-family: inherit; }
+  input::placeholder, textarea::placeholder { color: #b6b6b0; }
+  ::selection { background: #16181a; color: #fff; }
+</style>
+</helmet>
+
+<div style="--bg:#fff; --bg2:#f4f3ef; --ink:#16181a; --muted:#8a8a84; --line:rgba(22,24,26,.12); --accent:#3a5a40; font-family:'Hanken Grotesk',-apple-system,sans-serif; color:#16181a; background:#fff; min-height:100vh; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <div style="background:#16181a; color:#fff; text-align:center; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; padding:9px 20px; font-weight:500;">
+    UN-enlisted &nbsp;&middot;&nbsp; ISO 9001:2015 certified &nbsp;&middot;&nbsp; Manufacturing since 1980
+  </div>
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Home.dc.html"><img src="https://nepaltent.com.np/wp-content/uploads/2021/05/logo_ntt.png" alt="Nepal Tent &amp; Tarpaulin" style="height:40px; width:auto;"></a>
+      <nav style="display:flex; align-items:center; gap:30px; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:500;">
+        <a href="Home.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Home</a>
+        <a href="Company.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Company</a>
+        <a href="Awards.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Awards</a>
+        <a href="Clients.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Clients</a>
+        <a href="Press-Release.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Press</a>
+        <a href="Products.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Products</a>
+        <a href="Contact.dc.html" style="color:var(--ink); padding-bottom:2px; border-bottom:1px solid var(--ink);">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1280px; margin:0 auto; padding:96px 32px 64px; border-bottom:1px solid var(--line);">
+    <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:18px;">Get in touch</div>
+    <h1 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(40px,6vw,80px); letter-spacing:-.02em; line-height:1; margin-bottom:24px;">Contact</h1>
+    <p style="font-size:17px; line-height:1.65; color:var(--muted); max-width:58ch;">Reach our team for quotes, custom requirements or relief deployments. We respond promptly during operation hours.</p>
+  </section>
+
+  <!-- info + form -->
+  <section style="max-width:1280px; margin:0 auto; padding:72px 32px;">
+    <div style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:72px; align-items:start;">
+
+      <!-- info column -->
+      <div>
+        <div style="border-top:1px solid var(--ink);">
+          <div style="padding:24px 0; border-bottom:1px solid var(--line);">
+            <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px;">Office / Factory</div>
+            <a href="tel:+97714950831" style="display:block; font-size:16px; color:var(--ink);" style-hover="color:var(--accent)">+977 1-4950831</a>
+            <a href="tel:+97714956533" style="display:block; font-size:16px; color:var(--ink); margin-top:2px;" style-hover="color:var(--accent)">+977 1-4956533</a>
+          </div>
+          <div style="padding:24px 0; border-bottom:1px solid var(--line);">
+            <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px;">Location</div>
+            <a href="https://goo.gl/maps/f3rWUsCNtmWiPV9D8" target="_blank" style="font-size:16px; line-height:1.5; color:var(--ink);" style-hover="color:var(--accent)">Balaju Ring Rd Track Right,<br>Kathmandu 44600</a>
+          </div>
+          <div style="padding:24px 0; border-bottom:1px solid var(--line);">
+            <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px;">Email</div>
+            <a href="{{ mailtoHref }}" style="font-size:16px; color:var(--ink); word-break:break-all;" style-hover="color:var(--accent)">{{ email }}</a>
+          </div>
+          <div style="padding:24px 0; border-bottom:1px solid var(--line);">
+            <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px;">Operation hours</div>
+            <div style="font-size:16px; color:var(--ink);">Sunday &ndash; Friday, 9:00am &ndash; 5:00pm</div>
+            <div style="font-size:14px; color:var(--muted); margin-top:3px;">Break 1:30 &ndash; 2:00pm</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- form -->
+      <div>
+        <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:28px; letter-spacing:-.015em; margin-bottom:8px;">Send a message</h2>
+        <p style="font-size:15px; color:var(--muted); margin-bottom:36px;">Tell us what you need &mdash; product, quantity, size and timeline.</p>
+
+        <sc-if value="{{ sent }}" hint-placeholder-val="">
+          <div style="border:1px solid var(--line); padding:40px; text-align:center;">
+            <div style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:22px; margin-bottom:10px;">Thank you, {{ sentName }}.</div>
+            <p style="font-size:15px; color:var(--muted);">Your enquiry has been received. We'll respond during our next working hours.</p>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex; flex-direction:column; gap:28px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px;">
+              <label style="display:block;">
+                <span style="display:block; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px;">Name</span>
+                <input value="{{ name }}" onInput="{{ onName }}" placeholder="Your name" style="width:100%; padding:10px 0; border:none; border-bottom:1px solid var(--line); font-size:16px; background:transparent; outline:none; color:var(--ink);" style-focus="border-color:var(--ink)">
+              </label>
+              <label style="display:block;">
+                <span style="display:block; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px;">Phone</span>
+                <input value="{{ phone }}" onInput="{{ onPhone }}" placeholder="Phone number" style="width:100%; padding:10px 0; border:none; border-bottom:1px solid var(--line); font-size:16px; background:transparent; outline:none; color:var(--ink);" style-focus="border-color:var(--ink)">
+              </label>
+            </div>
+            <label style="display:block;">
+              <span style="display:block; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px;">Email</span>
+              <input value="{{ emailField }}" onInput="{{ onEmail }}" placeholder="you@example.com" style="width:100%; padding:10px 0; border:none; border-bottom:1px solid var(--line); font-size:16px; background:transparent; outline:none; color:var(--ink);" style-focus="border-color:var(--ink)">
+            </label>
+            <label style="display:block;">
+              <span style="display:block; font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:10px;">Message</span>
+              <textarea value="{{ message }}" onInput="{{ onMessage }}" rows="4" placeholder="What product or service are you interested in?" style="width:100%; padding:10px 0; border:none; border-bottom:1px solid var(--line); font-size:16px; background:transparent; outline:none; resize:vertical; color:var(--ink);" style-focus="border-color:var(--ink)"></textarea>
+            </label>
+            <button onClick="{{ submit }}" style="align-self:flex-start; padding:16px 38px; background:#16181a; color:#fff; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:600; border:none; cursor:pointer;" style-hover="background:#3a5a40">Send message</button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <!-- directors -->
+  <section style="background:var(--bg2); border-top:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:80px 32px;">
+      <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:14px;">Leadership</div>
+      <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(24px,2.8vw,36px); letter-spacing:-.015em; margin-bottom:44px;">Speak with our directors</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+        <sc-for list="{{ directors }}" as="d" hint-placeholder-count="2">
+          <div style="display:flex; gap:24px; align-items:flex-start; background:#fff; border:1px solid var(--line); padding:24px;">
+            <sc-if value="{{ d.photo }}" hint-placeholder-val="">
+              <img src="{{ d.photo }}" alt="{{ d.name }}" style="width:96px; height:96px; object-fit:cover; flex-shrink:0; background:var(--bg2); filter:grayscale(1);">
+            </sc-if>
+            <div>
+              <div style="font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent); font-weight:600; margin-bottom:6px;">{{ d.role }}</div>
+              <div style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:20px; letter-spacing:-.01em; margin-bottom:12px;">{{ d.name }}</div>
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <sc-for list="{{ d.phones }}" as="ph" hint-placeholder-count="2">
+                  <a href="tel:+977{{ ph }}" style="font-size:14.5px; color:var(--ink);" style-hover="color:var(--accent)">+977 {{ ph }}</a>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- map -->
+  <section style="border-top:1px solid var(--line);">
+    <iframe src="https://maps.google.com/maps?q=Nepal%20Tent%20And%20Tarpaulin%20Pvt%20Ltd%2C%20Balaju%20Ring%20Rd%20Track%20Right%2C%20Kathmandu%2044600&t=m&z=14&output=embed&iwloc=near" style="width:100%; height:440px; border:0; display:block; filter:grayscale(1);" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <footer style="background:#16181a; color:rgba(255,255,255,.72);">
+    <div style="max-width:1280px; margin:0 auto; padding:72px 32px 36px; display:grid; grid-template-columns:1.6fr 1fr 1fr 1.2fr; gap:40px;">
+      <div>
+        <img src="https://nepaltent.com.np/wp-content/uploads/2021/05/logo_ntt.png" alt="NTT" style="height:46px; filter:brightness(0) invert(1); opacity:.95; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.7; max-width:32ch;">Manufacturer &amp; exporter of premium camping, shelter and relief products from the Himalayas since 1980.</p>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Explore</div>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
+          <a href="Products.dc.html" style-hover="color:#fff">Products</a>
+          <a href="Awards.dc.html" style-hover="color:#fff">Awards</a>
+          <a href="Clients.dc.html" style-hover="color:#fff">Clients</a>
+          <a href="Press-Release.dc.html" style-hover="color:#fff">Press Release</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Company</div>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
+          <a href="Company.dc.html" style-hover="color:#fff">About</a>
+          <a href="Contact.dc.html" style-hover="color:#fff">Contact</a>
+          <a href="https://wa.me/+9779815398113" target="_blank" style-hover="color:#fff">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Contact</div>
+        <div style="font-size:14px; line-height:1.8;">
+          <div>Balaju Ring Rd, Kathmandu</div>
+          <div style="margin-top:8px;">Office: 4950831, 4956533</div>
+          <div>Mobile: 9851335109</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.14);">
+      <div style="max-width:1280px; margin:0 auto; padding:20px 32px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12.5px; color:rgba(255,255,255,.5);">
+        <span>&copy; 1980&ndash;2026 Nepal Tent &amp; Tarpaulin</span>
+        <span>UN-enlisted &middot; ISO 9001:2015</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/+9779815398113" target="_blank" aria-label="WhatsApp" style="position:fixed; bottom:24px; right:24px; z-index:60; width:52px; height:52px; border-radius:50%; background:#16181a; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px -8px rgba(0,0,0,.4);" style-hover="background:#3a5a40">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"></path></svg>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { name: "", emailField: "", phone: "", message: "", sent: false, sentName: "" };
+
+  renderVals() {
+    const email = "info" + "@" + "nepaltent" + ".com" + ".np";
+    return {
+      email: email,
+      mailtoHref: "mailto:" + email,
+      name: this.state.name,
+      emailField: this.state.emailField,
+      phone: this.state.phone,
+      message: this.state.message,
+      sent: this.state.sent,
+      sentName: this.state.sentName,
+      showForm: !this.state.sent,
+      onName: (e) => this.setState({ name: e.target.value }),
+      onEmail: (e) => this.setState({ emailField: e.target.value }),
+      onPhone: (e) => this.setState({ phone: e.target.value }),
+      onMessage: (e) => this.setState({ message: e.target.value }),
+      submit: () => {
+        const nm = this.state.name.trim() || "there";
+        this.setState({ sent: true, sentName: nm });
+      },
+      directors: [
+        { role: "Executive Director", name: "Keshav Basnet", photo: "https://nepaltent.com.np/wp-content/uploads/Keshav%20Basnet.jpg", phones: ["9851335109", "9815398113"] },
+        { role: "Managing Director", name: "Dipak Kumar Khulal", photo: "https://nepaltent.com.np/wp-content/uploads/Dipak%20Kumar%20Khulal.jpg", phones: ["9849140244", "9803604415", "9803238730"] },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

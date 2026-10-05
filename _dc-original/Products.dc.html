@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { margin: 0; }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  ::selection { background: #16181a; color: #fff; }
+</style>
+</helmet>
+
+<div style="--bg:#fff; --bg2:#f4f3ef; --ink:#16181a; --muted:#8a8a84; --line:rgba(22,24,26,.12); --accent:#3a5a40; font-family:'Hanken Grotesk',-apple-system,sans-serif; color:#16181a; background:#fff; min-height:100vh; -webkit-font-smoothing:antialiased; overflow-x:hidden; --accent:{{ accent }};">
+
+  <div style="background:#16181a; color:#fff; text-align:center; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; padding:9px 20px; font-weight:500;">
+    UN-enlisted &nbsp;&middot;&nbsp; ISO 9001:2015 certified &nbsp;&middot;&nbsp; Manufacturing since 1980
+  </div>
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Home.dc.html"><img src="https://nepaltent.com.np/wp-content/uploads/2021/05/logo_ntt.png" alt="Nepal Tent &amp; Tarpaulin" style="height:40px; width:auto;"></a>
+      <nav style="display:flex; align-items:center; gap:30px; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:500;">
+        <a href="Home.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Home</a>
+        <a href="Company.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Company</a>
+        <a href="Awards.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Awards</a>
+        <a href="Clients.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Clients</a>
+        <a href="Press-Release.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Press</a>
+        <a href="Products.dc.html" style="color:var(--ink); padding-bottom:2px; border-bottom:1px solid var(--ink);">Products</a>
+        <a href="Contact.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- page header -->
+  <section style="max-width:1280px; margin:0 auto; padding:96px 32px 56px; border-bottom:1px solid var(--line);">
+    <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:18px;">Catalogue &middot; 21 products</div>
+    <h1 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(40px,6vw,80px); letter-spacing:-.02em; line-height:1; margin-bottom:28px;">Products</h1>
+    <p style="font-size:16.5px; line-height:1.7; color:var(--muted); max-width:68ch;">Founded in 1980, Nepal Tent &amp; Tarpaulin manufactures customized tents, tarpaulin and gear for governments, the United Nations, NGOs and tourism brands. Every product is made to order &mdash; any size, fabric and colour as per requirement.</p>
+  </section>
+
+  <!-- TOC -->
+  <sc-if value="{{ showToc }}" hint-placeholder-val="{{ true }}">
+    <section style="{{ tocSectionStyle }}">
+      <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:20px;">Index</div>
+      <sc-if value="{{ tocChips }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex; flex-wrap:wrap; gap:8px;">
+          <sc-for list="{{ products }}" as="p" hint-placeholder-count="21">
+            <a href="#{{ p.anchor }}" style="display:inline-flex; align-items:center; gap:7px; padding:8px 14px; border:1px solid var(--line); font-size:13px; font-weight:500; color:var(--ink);" style-hover="border-color:var(--ink); background:var(--bg2)">
+              <span style="font-family:'Schibsted Grotesk',sans-serif; font-size:11px; color:var(--accent); font-weight:600;">{{ p.num }}</span>
+              {{ p.name }}
+            </a>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ tocList }}" hint-placeholder-val="">
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0 32px; border-top:1px solid var(--line);">
+          <sc-for list="{{ products }}" as="p" hint-placeholder-count="21">
+            <a href="#{{ p.anchor }}" style="display:flex; align-items:baseline; gap:12px; padding:12px 4px; font-size:14px; font-weight:500; color:var(--ink); border-bottom:1px solid var(--line);" style-hover="color:var(--accent)">
+              <span style="font-family:'Schibsted Grotesk',sans-serif; font-size:11px; font-weight:600; color:var(--accent); min-width:20px;">{{ p.num }}</span>
+              {{ p.name }}
+            </a>
+          </sc-for>
+        </div>
+      </sc-if>
+    </section>
+  </sc-if>
+
+  <!-- products -->
+  <section style="max-width:1280px; margin:0 auto; padding:24px 32px 40px;">
+    <sc-for list="{{ products }}" as="p" hint-placeholder-count="0">
+      <article id="{{ p.anchor }}" style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; padding:72px 0; border-bottom:1px solid var(--line);">
+        <!-- gallery -->
+        <div>
+          <div style="position:relative; background:var(--bg2); border:1px solid var(--line); aspect-ratio:1/1; overflow:hidden;">
+            <sc-if value="{{ p.currentImage }}" hint-placeholder-val="">
+              <img src="{{ p.currentImage }}" alt="{{ p.name }}" style="width:100%; height:100%; object-fit:contain; padding:44px;">
+            </sc-if>
+            <sc-if value="{{ p.hasMultiple }}" hint-placeholder-val="">
+              <button onClick="{{ p.prev }}" aria-label="Previous" style="position:absolute; left:16px; top:50%; transform:translateY(-50%); width:42px; height:42px; border:1px solid var(--line); background:rgba(255,255,255,.9); color:var(--ink); font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center;" style-hover="background:var(--ink); color:#fff">&#8249;</button>
+              <button onClick="{{ p.next }}" aria-label="Next" style="position:absolute; right:16px; top:50%; transform:translateY(-50%); width:42px; height:42px; border:1px solid var(--line); background:rgba(255,255,255,.9); color:var(--ink); font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center;" style-hover="background:var(--ink); color:#fff">&#8250;</button>
+              <div style="position:absolute; bottom:16px; right:16px; font-size:11.5px; letter-spacing:.08em; color:var(--muted); background:rgba(255,255,255,.9); padding:4px 10px; font-weight:500;">{{ p.counter }}</div>
+            </sc-if>
+          </div>
+          <sc-if value="{{ p.hasMultiple }}" hint-placeholder-val="">
+            <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
+              <sc-for list="{{ p.thumbs }}" as="t" hint-placeholder-count="0">
+                <img src="{{ t.src }}" onClick="{{ t.onClick }}" alt="thumbnail" style="width:60px; height:60px; object-fit:contain; background:var(--bg2); border:1px solid {{ t.border }}; padding:6px; cursor:pointer;">
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+
+        <!-- details -->
+        <div>
+          <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:8px;">
+            <span style="font-family:'Schibsted Grotesk',sans-serif; font-weight:600; font-size:14px; color:var(--accent);">{{ p.num }}</span>
+            <span style="font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:600;">{{ p.code }}</span>
+          </div>
+          <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(26px,2.8vw,38px); letter-spacing:-.015em; line-height:1.05; margin-bottom:24px;">{{ p.name }}</h2>
+
+          <sc-if value="{{ p.hasAreas }}" hint-placeholder-val="">
+            <div style="margin-bottom:26px;">
+              <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:12px;">Areas of use</div>
+              <div style="display:flex; flex-wrap:wrap; gap:7px;">
+                <sc-for list="{{ p.areas }}" as="area" hint-placeholder-count="4">
+                  <span style="font-size:13px; font-weight:500; border:1px solid var(--line); padding:6px 12px; color:var(--ink);">{{ area }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ p.hasFeatures }}" hint-placeholder-val="">
+            <div style="margin-bottom:26px;">
+              <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:12px;">Features</div>
+              <ul style="list-style:none; display:flex; flex-direction:column; gap:10px;">
+                <sc-for list="{{ p.features }}" as="f" hint-placeholder-count="4">
+                  <li style="display:flex; gap:12px; font-size:15px; line-height:1.5; color:var(--ink); border-bottom:1px solid var(--line); padding-bottom:10px;">
+                    <span style="color:var(--accent); font-weight:600;">&mdash;</span>{{ f }}
+                  </li>
+                </sc-for>
+              </ul>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ p.blurb }}" hint-placeholder-val="">
+            <p style="font-size:15.5px; line-height:1.7; color:var(--ink); margin-bottom:26px; max-width:52ch;">{{ p.blurb }}</p>
+          </sc-if>
+
+          <sc-if value="{{ p.hasSizes }}" hint-placeholder-val="">
+            <div style="margin-bottom:26px;">
+              <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:12px;">Sizes available <span style="text-transform:none; letter-spacing:0; color:rgba(22,24,26,.35);">(ft)</span></div>
+              <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                <thead>
+                  <tr>
+                    <sc-for list="{{ p.sizes.cols }}" as="col" hint-placeholder-count="4">
+                      <th style="text-align:left; font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--muted); padding:0 14px 10px 0; border-bottom:1px solid var(--ink);">{{ col }}</th>
+                    </sc-for>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ p.sizes.rows }}" as="row" hint-placeholder-count="3">
+                    <tr>
+                      <sc-for list="{{ row }}" as="cell" hint-placeholder-count="4">
+                        <td style="padding:11px 14px 11px 0; border-bottom:1px solid var(--line); color:var(--ink);">{{ cell }}</td>
+                      </sc-for>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ p.sizesNote }}" hint-placeholder-val="">
+            <div style="margin-bottom:26px;">
+              <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:8px;">Sizes available</div>
+              <p style="font-size:15px; color:var(--ink); line-height:1.6;">{{ p.sizesNote }}</p>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ p.hasSpec }}" hint-placeholder-val="">
+            <div style="margin-bottom:22px; overflow-x:auto;">
+              <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:12px;">Specification</div>
+              <table style="width:100%; border-collapse:collapse; font-size:13.5px;">
+                <thead>
+                  <tr>
+                    <sc-for list="{{ p.spec.cols }}" as="col" hint-placeholder-count="5">
+                      <th style="text-align:left; font-family:'Hanken Grotesk',sans-serif; font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:var(--muted); padding:0 14px 10px 0; border-bottom:1px solid var(--ink); white-space:nowrap;">{{ col }}</th>
+                    </sc-for>
+                  </tr>
+                </thead>
+                <tbody>
+                  <sc-for list="{{ p.spec.rows }}" as="row" hint-placeholder-count="3">
+                    <tr>
+                      <sc-for list="{{ row }}" as="cell" hint-placeholder-count="5">
+                        <td style="padding:11px 14px 11px 0; border-bottom:1px solid var(--line); color:var(--ink); vertical-align:top;">{{ cell }}</td>
+                      </sc-for>
+                    </tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ p.optional }}" hint-placeholder-val="">
+            <p style="font-size:13.5px; color:var(--muted); line-height:1.55; margin-bottom:22px;"><span style="color:var(--ink); font-weight:600;">Optional:</span> {{ p.optional }}</p>
+          </sc-if>
+
+          <a href="Contact.dc.html" style="display:inline-block; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; border-bottom:1px solid var(--ink); padding-bottom:3px;" style-hover="color:var(--accent); border-color:var(--accent)">Enquire about {{ p.code }} &rarr;</a>
+        </div>
+      </article>
+    </sc-for>
+  </section>
+
+  <!-- CTA -->
+  <section style="border-top:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:96px 32px; text-align:center;">
+      <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(28px,3.6vw,48px); letter-spacing:-.02em; line-height:1.05; margin-bottom:22px; max-width:20ch; margin-left:auto; margin-right:auto;">Don't see exactly what you need?</h2>
+      <p style="font-size:16px; line-height:1.6; color:var(--muted); max-width:48ch; margin:0 auto 32px;">Every product is made to order &mdash; any size, fabric and colour as per your requirement.</p>
+      <a href="Contact.dc.html" style="display:inline-block; padding:16px 38px; background:#16181a; color:#fff; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;" style-hover="background:#3a5a40">Request a quote</a>
+    </div>
+  </section>
+
+  <footer style="background:#16181a; color:rgba(255,255,255,.72);">
+    <div style="max-width:1280px; margin:0 auto; padding:72px 32px 36px; display:grid; grid-template-columns:1.6fr 1fr 1fr 1.2fr; gap:40px;">
+      <div>
+        <img src="https://nepaltent.com.np/wp-content/uploads/2021/05/logo_ntt.png" alt="NTT" style="height:46px; filter:brightness(0) invert(1); opacity:.95; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.7; max-width:32ch;">Manufacturer &amp; exporter of premium camping, shelter and relief products from the Himalayas since 1980.</p>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Explore</div>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
+          <a href="Products.dc.html" style-hover="color:#fff">Products</a>
+          <a href="Awards.dc.html" style-hover="color:#fff">Awards</a>
+          <a href="Clients.dc.html" style-hover="color:#fff">Clients</a>
+          <a href="Press-Release.dc.html" style-hover="color:#fff">Press Release</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Company</div>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
+          <a href="Company.dc.html" style-hover="color:#fff">About</a>
+          <a href="Contact.dc.html" style-hover="color:#fff">Contact</a>
+          <a href="https://wa.me/+9779815398113" target="_blank" style-hover="color:#fff">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Contact</div>
+        <div style="font-size:14px; line-height:1.8;">
+          <div>Balaju Ring Rd, Kathmandu</div>
+          <div style="margin-top:8px;">Office: 4950831, 4956533</div>
+          <div>Mobile: 9851335109</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.14);">
+      <div style="max-width:1280px; margin:0 auto; padding:20px 32px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12.5px; color:rgba(255,255,255,.5);">
+        <span>&copy; 1980&ndash;2026 Nepal Tent &amp; Tarpaulin</span>
+        <span>UN-enlisted &middot; ISO 9001:2015</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/+9779815398113" target="_blank" aria-label="WhatsApp" style="position:fixed; bottom:24px; right:24px; z-index:60; width:52px; height:52px; border-radius:50%; background:#16181a; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px -8px rgba(0,0,0,.4);" style-hover="background:#3a5a40">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"></path></svg>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#3a5a40&quot;, &quot;options&quot;: [&quot;#3a5a40&quot;, &quot;#16181a&quot;, &quot;#7a5c3a&quot;, &quot;#2a4d63&quot;], &quot;tsType&quot;: &quot;string&quot; },
+  &quot;tocStyle&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;Chips&quot;, &quot;options&quot;: [&quot;Chips&quot;, &quot;Numbered list&quot;, &quot;Hidden&quot;], &quot;tsType&quot;: &quot;string&quot; },
+  &quot;stickyToc&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: false, &quot;tsType&quot;: &quot;boolean&quot; },
+  &quot;showSpecs&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot; }
+}">
+class Component extends DCLogic {
+  state = { idx: {} };
+
+  setIdx(code, i, total) {
+    const wrapped = ((i % total) + total) % total;
+    this.setState((s) => ({ idx: { ...s.idx, [code]: wrapped } }));
+  }
+
+  stdSpec(frame) {
+    return {
+      cols: ["Quality", "Fabric", "Thickness", "Frame", "Colour"],
+      rows: [
+        ["Normal", "Rubberized (water repellent)", "Standard", frame, "Client's choice"],
+        ["High", "PVC \u2014 water, moisture, dust-proof, fire-repellent", "200\u20131000 gsm", "", ""],
+        ["\u2014", "Canvas (water & moisture proof)", "Standard", "", ""],
+      ],
+    };
+  }
+
+  data() {
+    const U = "https://nepaltent.com.np/wp-content/uploads/2021/06/";
+    const P = "https://nepaltent.com.np/wp-content/uploads/products/";
+    const lbcs = ["Length", "Breadth", "Centre", "Side Wall"];
+    const lbh = ["Length", "Breadth", "Height"];
+    const std = (f) => this.stdSpec(f);
+    const opt = "Ground sheet, side bars, doors & windows (PE/PVC) as per requirement.";
+    return [
+      { code: "NTT 001", name: "Cottage Frame Tent",
+        images: [U + "NTT_Product_Code_001_Shelter_Cottage-Frame-Tent_Image_1.png", U + "NTT_Product_Code_001_Shelter_Cottage-Frame-Tent_Image_2.png"],
+        areas: ["Disaster & Relief", "Camping & Glamping", "Hotels & Resorts", "Trekking", "Hydro / Construction projects"],
+        sizes: { cols: lbcs, rows: [["16", "10", "8", "5"], ["18", "12", "9", "6"], ["20", "30", "10", "6"], ["Or any size as per requirement", "", "", ""]] },
+        spec: std("Iron Frame"), optional: opt },
+      { code: "NTT 002", name: "Cottage Pole Tent",
+        images: [U + "NTT_Product_Code_002_Shelter_Cottage-Pole-Tent_Image_1.jpg", U + "NTT_Product_Code_002_Shelter_Cottage-Pole-Tent_Image_2.png"],
+        areas: ["Disaster & Relief", "Camping & Glamping", "Hotels & Resorts", "Trekking", "Hydro / Construction projects"],
+        sizes: { cols: lbcs, rows: [["8", "8", "7.5", "4"], ["10", "10", "7.5", "4"], ["12", "12", "7.5", "4"], ["Or any size as per requirement", "", "", ""]] },
+        spec: std("Iron Frame"), optional: opt },
+      { code: "NTT 003", name: "Dining / Kitchen Tent",
+        images: [U + "NTT_Product_Code_007_Kitchen-and-Dining-Tent_Image_1.jpg", U + "NTT_Product_Code_007_Kitchen-and-Dining-Tent_Image_2.jpg"],
+        areas: ["Disaster & Relief", "Camping & Glamping", "Hotels & Resorts", "Trekking & outdoor functions", "Hydro / Construction projects"],
+        sizes: { cols: lbcs, rows: [["8", "8", "7.5", "4"], ["10", "10", "7.5", "4"], ["12", "12", "7.5", "4"], ["Or any size as per requirement", "", "", ""]] },
+        spec: std("Iron Frame / Poles"), optional: opt },
+      { code: "NTT 004", name: "Canopy Tent (Gazebo)",
+        images: [U + "NTT_Product_Code_005_Canopy-Tent_Image_1.png", U + "NTT_Product_Code_005_Canopy-Tent_Image_2.png"],
+        areas: ["Disaster & Relief", "Camping & Glamping", "Hotels & Resorts", "Poolside & outdoor functions", "Hydro / Construction projects"],
+        sizes: { cols: lbcs, rows: [["8", "8", "7.5", "4"], ["10", "10", "7.5", "4"], ["12", "12", "7.5", "4"], ["Or any size as per requirement", "", "", ""]] },
+        spec: std("Iron Frame"), optional: opt },
+      { code: "NTT 005", name: "A-shaped / Namaste Tent",
+        images: [U + "NTT_Product_Code_010_A-Shaped-Tent_Image_1.png", U + "NTT_Product_Code_010_A-Shaped-Tent_Image_2.png"],
+        areas: ["Relief operation", "Camping & Glamping", "Hotels & Resorts", "Poolside & outdoor functions", "Hydro / Construction projects"],
+        sizes: { cols: lbh, rows: [["6", "8", "5"], ["Or any size as per requirement", "", ""]] },
+        spec: std("Iron or Aluminium Frame"), optional: opt },
+      { code: "NTT 006", name: "Shamiyana / Party Tent",
+        images: [U + "NTT_Product_Code_012_Marquee-Party-TentSamiana_Image_1.png"],
+        areas: ["Wedding party", "Outdoor social functions", "Trade fairs", "Hydro / Construction projects"],
+        sizes: { cols: lbcs, rows: [["15", "10", "10", "8"], ["30", "20", "12", "8"], ["40", "20", "12", "10"], ["Or any size as per requirement", "", "", ""]] },
+        spec: std("Iron Poles"), optional: opt },
+      { code: "NTT 007", name: "Dome Tent",
+        images: [U + "NTT_Product_Code_009_Dome-Tent_Image_1.png", U + "NTT_Product_Code_009_Dome-Tent_Image_2.png"],
+        areas: ["Disaster & Relief", "Camping & Glamping", "Hotels & Resorts", "Trekking & outdoor functions", "Hydro / Construction projects"],
+        sizes: { cols: lbh, rows: [["6.5", "5.5", "5"], ["Or any size as per requirement", "", ""]] },
+        spec: std("Aluminium Fittings"), optional: opt },
+      { code: "NTT 008", name: "Kalash Tent",
+        images: [U + "NTT_Product_Code_006_Kalash-Tent_Image_1.png.png", U + "NTT_Product_Code_006_Kalash-Tent_Image_2.jpg"],
+        areas: ["Hotels & Resorts", "Camping & Glamping", "Poolside & outdoor functions", "Hydro / Construction projects"],
+        sizes: { cols: lbcs, rows: [["8", "8", "8", "5"], ["10", "10", "9", "6"], ["12", "12", "10", "6"], ["Or any size as per requirement", "", "", ""]] },
+        spec: std("PPR, Iron or Aluminium Frame"), optional: opt },
+      { code: "NTT 009", name: "Toilet / Shower Tent",
+        images: [U + "NTT_Product_Code_008_Toilet-and-Shower-Tent_Image_1.jpg", U + "NTT_Product_Code_008_Toilet-and-Shower-Tent_Image_2.png"],
+        areas: ["Hotels & Resorts", "Camping & Glamping", "Poolside & outdoor functions", "Hydro / Construction projects"],
+        sizes: { cols: lbh, rows: [["4", "4", "6"], ["Or any size as per requirement", "", ""]] },
+        spec: std("Iron Frame / Poles"), optional: opt },
+      { code: "NTT 010", name: "Camping Tent",
+        images: [P + "camping-tent-1.jpg", P + "camping-tent-2.jpg"],
+        features: ["Made of 100% water-proof fabric", "Water-proof outer surface", "Inner layer joined with ground sheet", "Aluminium & iron pole construction", "Standard size 4'\u00d76' to 10'\u00d710'"] },
+      { code: "NTT 011", name: "Round Tent",
+        images: [U + "NTT_Product_Code_014_Conference-Tent_Image_1.jpg"],
+        areas: ["Conference meetings", "Outdoor activities"],
+        sizesNote: "Any size as per requirement.",
+        spec: { cols: ["Quality", "Fabric", "Thickness", "Pole", "Colour"], rows: [["Normal", "Rubberized (water repellent)", "Standard", "Iron Poles", "Client's choice"], ["High", "PVC \u2014 water, moisture, dust-proof, fire-repellent", "200\u20131000 gsm", "", ""], ["\u2014", "Canvas (water & moisture proof)", "Standard", "", ""]] } },
+      { code: "NTT 012", name: "Hall Tent / Mobile Storage",
+        images: [U + "NTT_Product_Code_032_Mobile-Storage-Units_Image_1.jpg", U + "NTT_Product_Code_032_Mobile-Storage-Units_Image_2.jpg"],
+        blurb: "Mobile storage units serve as temporary storage for humanitarian relief, and are equally suited to storing grain for farmers and traders. Versatile enough to be used as schools, workshop halls, warehouses and canteens.",
+        sizesNote: "32 \u00d7 24 m  \u00b7  32 \u00d7 18 m  \u00b7  or any size as per requirement." },
+      { code: "NTT 013", name: "Stall Tent",
+        images: [P + "stall-tent.jpg"],
+        features: ["Made of 100% water-proof fabric", "Iron frame construction", "Size as per client requirement", "Standard size 4'\u00d74' to 6'\u00d76'"] },
+      { code: "NTT 014", name: "Vehicle Cover",
+        images: [U + "NTT_Product_Code_029_Vehicle-Cover-Car_Image_1.jpg", U + "NTT_Product_Code_029_Vehicle-Cover-Bike_Image_2.png", U + "NTT_Product_Code_029_Vehicle-Cover-Truck_Image_3.png"],
+        blurb: "Vehicle covers protect motorbikes, cars, jeeps, mini-trucks and trucks from sunlight, heat, dust and rain.",
+        sizesNote: "As per requirement.",
+        spec: { cols: ["Vehicle", "Fabric", "Thickness", "Colour"], rows: [["Jeep, mini-truck, truck", "PE, heavy-duty canvas or PVC \u2014 water, moisture & dust proof, fire-repellent", "Standard", "Client's choice"], ["Motorbikes & cars", "Waterproof nylon fabric", "", ""]] } },
+      { code: "NTT 015", name: "Sleeping Bag / Mattress",
+        images: [U + "NTT_Product_Code_023_Sleeping-Bag_Image_1.png", U + "NTT_Product_Code_023_Poncho_Image_2.png", U + "NTT_Product_Code_022_Mattress_Image_1.jpg", U + "NTT_Product_Code_022_Mattress_Image_2.jpg"],
+        areas: ["Relief operations", "Camping & Glamping", "Trekking", "Project sites", "Individual use"],
+        spec: { cols: ["Item", "Material"], rows: [["Sleeping Bag", "High-quality water/moisture-proof fabric with down / holofil / fibre filling"], ["Poncho", "100% waterproof nylon-coated fabric"], ["Mattress", "High-density foam or EVA sheet (blue, green, black)"]] } },
+      { code: "NTT 016", name: "Garden Umbrella",
+        images: [U + "NTT_Product_Code_004_Garden-Umbrella_Image_1.png", U + "NTT_Product_Code_004_Garden-Umbrella_Image_2.png"],
+        areas: ["Hotels / Resorts", "Camping / Glamping", "Restaurants & rooftops", "Poolside", "Personal use"],
+        sizesNote: "Standard.",
+        spec: { cols: ["Material", "Colour"], rows: [["Nylon, water-proof fabric", "Client's choice \u2014 single or multi-colour"]] } },
+      { code: "NTT 017", name: "Vehicle Tent",
+        images: [P + "vehicle-tent.jpg"],
+        features: ["Made of 100% water-proof fabric", "Extra ground sheet", "Aluminium pole or PPR pipe", "Size as per client requirement"] },
+      { code: "NTT 018", name: "Stage",
+        images: [P + "stage-tent.jpg"],
+        features: ["Iron / steel body", "Layer & design as per client requirement", "Size as per client requirement", "Standard size 12'\u00d716' or 16'\u00d720'"] },
+      { code: "NTT 019", name: "Glass Dome Tent",
+        images: [P + "glass-dome-tent.jpeg"],
+        features: ["Made of 100% water-proof fabric", "Adjustable temperature \u22125\u00b0C to 40\u00b0C", "Outer single layer", "Inner layer joined with ground sheet", "Iron frame construction", "Approx. 6 m / 20 ft"] },
+      { code: "NTT 020", name: "Green House Tunnel",
+        images: [U + "NTT_Product_Code_015_Tunnel-Green-House-Tent_Image_1.jpg", U + "NTT_Product_Code_015_Tunnel-Green-House-Tent_Image_2.jpg"],
+        blurb: "The tunnel tent is used as a greenhouse in agriculture \u2014 plant protection, climate control and a longer growing season. Also used for storing non-food items, including bricks during the rainy season.",
+        sizes: { cols: lbcs, rows: [["15", "10", "9", "5"], ["30", "20", "10", "6"], ["45", "30", "10", "7"], ["60", "40", "12", "8"], ["Or any size as per requirement", "", "", ""]] },
+        spec: { cols: ["Quality", "Fabric", "Thickness", "Frame", "Colour"], rows: [["Normal", "HD plastic", "Standard", "Iron Frame", "Client's choice"], ["High", "PVC \u2014 water, moisture, dust-proof, fire-repellent", "200\u20131000 gsm", "", ""], ["\u2014", "PE (water & moisture proof)", "Standard", "", ""]] },
+        optional: "Ground sheet, side bars, doors \u2014 full or half cover, as per requirement." },
+      { code: "NTT 021", name: "Bell Tent",
+        images: [P + "bell-tent.jpg"],
+        features: ["Premium glamping bell tent", "Water-proof canvas or PVC fabric", "Single central pole, easy pitch", "Custom sizes available on request"] },
+    ];
+  }
+
+  renderVals() {
+    const idx = this.state.idx;
+    const accent = this.props.accentColor || "#3a5a40";
+    const showSpecs = this.props.showSpecs !== false;
+    const tocStyle = this.props.tocStyle || "Chips";
+    const sticky = this.props.stickyToc === true;
+    const tocSectionStyle =
+      "max-width:1280px; margin:0 auto; padding:48px 32px 24px;" +
+      (sticky ? " position:sticky; top:72px; z-index:20; background:#fff;" : "");
+    const products = this.data().map((p, i) => {
+      const total = p.images.length;
+      const cur = Math.min(idx[p.code] || 0, total - 1);
+      return {
+        ...p,
+        num: String(i + 1).padStart(2, "0"),
+        anchor: "ntt-" + String(i + 1).padStart(3, "0"),
+        currentImage: p.images[cur],
+        counter: cur + 1 + " / " + total,
+        hasMultiple: total > 1,
+        hasAreas: !!(p.areas && p.areas.length),
+        hasFeatures: !!(p.features && p.features.length),
+        hasSizes: !!p.sizes,
+        hasSpec: !!p.spec && showSpecs,
+        blurb: p.blurb || "",
+        sizesNote: p.sizesNote || "",
+        optional: p.optional || "",
+        next: () => this.setIdx(p.code, cur + 1, total),
+        prev: () => this.setIdx(p.code, cur - 1, total),
+        thumbs: p.images.map((src, j) => ({
+          src,
+          border: j === cur ? accent : "rgba(22,24,26,.12)",
+          onClick: () => this.setIdx(p.code, j, total),
+        })),
+      };
+    });
+    return {
+      products,
+      accent,
+      showToc: tocStyle !== "Hidden",
+      tocChips: tocStyle === "Chips",
+      tocList: tocStyle === "Numbered list",
+      tocSectionStyle,
+    };
+  }
+}
+</script>
+</body>
+</html>

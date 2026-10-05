@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /*.dc.html$
+
+Sitemap: https://nepaltent.com.np/sitemap.xml

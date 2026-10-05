@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { margin: 0; }
+  a { text-decoration: none; color: inherit; }
+  img { display: block; }
+  ::selection { background: #16181a; color: #fff; }
+</style>
+</helmet>
+
+<div style="--bg:#fff; --bg2:#f4f3ef; --ink:#16181a; --muted:#8a8a84; --line:rgba(22,24,26,.12); --accent:#3a5a40; font-family:'Hanken Grotesk',-apple-system,sans-serif; color:#16181a; background:#fff; min-height:100vh; -webkit-font-smoothing:antialiased; overflow-x:hidden;">
+
+  <div style="background:#16181a; color:#fff; text-align:center; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; padding:9px 20px; font-weight:500;">
+    UN-enlisted &nbsp;&middot;&nbsp; ISO 9001:2015 certified &nbsp;&middot;&nbsp; Manufacturing since 1980
+  </div>
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 32px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Home.dc.html"><img src="https://nepaltent.com.np/wp-content/uploads/2021/05/logo_ntt.png" alt="Nepal Tent &amp; Tarpaulin" style="height:40px; width:auto;"></a>
+      <nav style="display:flex; align-items:center; gap:30px; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:500;">
+        <a href="Home.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Home</a>
+        <a href="Company.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Company</a>
+        <a href="Awards.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Awards</a>
+        <a href="Clients.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Clients</a>
+        <a href="Press-Release.dc.html" style="color:var(--ink); padding-bottom:2px; border-bottom:1px solid var(--ink);">Press</a>
+        <a href="Products.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Products</a>
+        <a href="Contact.dc.html" style="color:var(--muted);" style-hover="color:var(--ink)">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1280px; margin:0 auto; padding:96px 32px 64px; border-bottom:1px solid var(--line);">
+    <div style="font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-bottom:18px;">In the news &middot; Kantipur</div>
+    <h1 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(40px,6vw,80px); letter-spacing:-.02em; line-height:1; margin-bottom:24px;">Press release</h1>
+    <p style="font-size:17px; line-height:1.65; color:var(--muted); max-width:60ch;">Nepal Tent &amp; Tarpaulin was the first company in Nepal to be recognised by a United Nations agency (UNMIN) for its services &mdash; coverage from the national press.</p>
+  </section>
+
+  <!-- articles -->
+  <section style="max-width:1280px; margin:0 auto; padding:24px 32px 96px;">
+    <sc-for list="{{ articles }}" as="a" hint-placeholder-count="0">
+      <article style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:center; padding:56px 0; border-bottom:1px solid var(--line);">
+        <a href="{{ a.img }}" target="_blank" style="display:block; background:var(--bg2); border:1px solid var(--line); overflow:hidden;" style-hover="border-color:var(--accent)">
+          <img src="{{ a.img }}" alt="{{ a.title }}" style="width:100%; height:auto; object-fit:cover;">
+        </a>
+        <div>
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+            <span style="font-family:'Schibsted Grotesk',sans-serif; font-weight:600; font-size:13px; color:var(--accent);">{{ a.no }}</span>
+            <span style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600;">Kantipur Daily</span>
+          </div>
+          <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(24px,2.6vw,34px); letter-spacing:-.015em; line-height:1.1; margin-bottom:16px;">{{ a.title }}</h2>
+          <p style="font-size:16px; line-height:1.7; color:var(--muted); max-width:48ch; margin-bottom:24px;">{{ a.desc }}</p>
+          <a href="{{ a.img }}" target="_blank" style="font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; border-bottom:1px solid var(--ink); padding-bottom:3px;" style-hover="color:var(--accent); border-color:var(--accent)">Read clipping &rarr;</a>
+        </div>
+      </article>
+    </sc-for>
+  </section>
+
+  <section style="border-top:1px solid var(--line);">
+    <div style="max-width:1280px; margin:0 auto; padding:84px 32px; text-align:center;">
+      <h2 style="font-family:'Schibsted Grotesk',sans-serif; font-weight:500; font-size:clamp(26px,3.4vw,44px); letter-spacing:-.015em; margin-bottom:28px;">A legacy of recognised service.</h2>
+      <a href="Awards.dc.html" style="display:inline-block; padding:16px 38px; background:#16181a; color:#fff; font-size:12.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;" style-hover="background:#3a5a40">View our awards</a>
+    </div>
+  </section>
+
+  <footer style="background:#16181a; color:rgba(255,255,255,.72);">
+    <div style="max-width:1280px; margin:0 auto; padding:72px 32px 36px; display:grid; grid-template-columns:1.6fr 1fr 1fr 1.2fr; gap:40px;">
+      <div>
+        <img src="https://nepaltent.com.np/wp-content/uploads/2021/05/logo_ntt.png" alt="NTT" style="height:46px; filter:brightness(0) invert(1); opacity:.95; margin-bottom:20px;">
+        <p style="font-size:14px; line-height:1.7; max-width:32ch;">Manufacturer &amp; exporter of premium camping, shelter and relief products from the Himalayas since 1980.</p>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Explore</div>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
+          <a href="Products.dc.html" style-hover="color:#fff">Products</a>
+          <a href="Awards.dc.html" style-hover="color:#fff">Awards</a>
+          <a href="Clients.dc.html" style-hover="color:#fff">Clients</a>
+          <a href="Press-Release.dc.html" style-hover="color:#fff">Press Release</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Company</div>
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:14px;">
+          <a href="Company.dc.html" style-hover="color:#fff">About</a>
+          <a href="Contact.dc.html" style-hover="color:#fff">Contact</a>
+          <a href="https://wa.me/+9779815398113" target="_blank" style-hover="color:#fff">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#fff; margin-bottom:18px; font-weight:600;">Contact</div>
+        <div style="font-size:14px; line-height:1.8;">
+          <div>Balaju Ring Rd, Kathmandu</div>
+          <div style="margin-top:8px;">Office: 4950831, 4956533</div>
+          <div>Mobile: 9851335109</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.14);">
+      <div style="max-width:1280px; margin:0 auto; padding:20px 32px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:12.5px; color:rgba(255,255,255,.5);">
+        <span>&copy; 1980&ndash;2026 Nepal Tent &amp; Tarpaulin</span>
+        <span>UN-enlisted &middot; ISO 9001:2015</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/+9779815398113" target="_blank" aria-label="WhatsApp" style="position:fixed; bottom:24px; right:24px; z-index:60; width:52px; height:52px; border-radius:50%; background:#16181a; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px -8px rgba(0,0,0,.4);" style-hover="background:#3a5a40">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2z"></path></svg>
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const E = "https://nepaltent.com.np/wp-content/uploads/elementor/thumbs/";
+    return {
+      articles: [
+        { no: "01", title: "Nepal Tent bags UNMIN medal", desc: "Nepal Tent & Tarpaulin becomes the first company in Nepal to be recognised by a UN agency (UNMIN) for its services.", img: E + "article_1-p7hm1nmvt4ftf3vckvfgxgbi2ahp7hl9njg5eshpb8.jpg" },
+        { no: "02", title: "UNMIN service medal", desc: "National coverage of NTT's recognition by the United Nations Mission in Nepal for outstanding service.", img: E + "article_2-p7hm1okpzyh3qptzfdu3hy2ynod2f6ozzo3mw2gb50.jpg" },
+        { no: "03", title: "Service medal to Nepal Tent", desc: "Nepal Tent & Tarpaulin honoured for its contribution to the peace process and relief operations in Nepal.", img: "https://nepaltent.com.np/wp-content/uploads/2021/05/article_3.jpg" },
+        { no: "04", title: "UNMIN awards medal", desc: "Press coverage of the UNMIN award, marking a milestone as the first Nepali company recognised by a UN agency.", img: E + "article_4-p7hm1qgedmjodxr94encmxlvug3sukwgnxelumdisk.jpg" },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
